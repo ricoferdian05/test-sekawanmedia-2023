@@ -46,4 +46,19 @@ class TransaksiModels extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getByStatus()
+    {
+        return $this
+            ->select('kendaraan.nama_kendaraan AS kendaraan,
+        driver.nama_driver AS driver,
+        nama_pemesan,
+        hp_pemesan,
+        tanggal_pemesanan,
+        tanggal_kembali,
+        status')
+            ->join('kendaraan', 'kendaraan.kendaraan_id = transaksi.kendaraan_id')
+            ->join('driver', 'driver.driver_id = transaksi.driver_id')
+            ->orderBy('status', 'ASC');
+    }
 }
