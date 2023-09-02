@@ -31,12 +31,15 @@ class Login extends BaseController
                 ];
                 session()->set($ses_data);
                 if ($dataUser['role'] === '1') {
+                    log_message('info', "User with ID {$dataUser['user_id']} successfully logged in");
                     return redirect()->to(base_url('admin'));
                 } elseif ($dataUser['role'] === '2' || $dataUser['role'] === '3') {
+                    log_message('info', "User with ID {$dataUser['user_id']} successfully logged in");
                     return redirect()->to(base_url('agreement'));
                 }
             }
         } else {
+            log_message('error', 'Email or Password incorrect');
             session()->setFlashdata('error', 'Masukkan Email dan Password dengan Benar!!!');
             return redirect()->back();
         }
@@ -44,6 +47,7 @@ class Login extends BaseController
 
     public function logout()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " successfully logged out");
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('/login'));

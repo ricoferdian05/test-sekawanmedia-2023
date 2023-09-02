@@ -26,8 +26,6 @@ class Driver extends BaseController
 
         if ($user['role'] === '1') {
             return view('admin/driver', $data);
-        } elseif ($user['role'] === '2' || $user['role'] === '3') {
-            return view('agreement/driver', $data);
         }
     }
 }

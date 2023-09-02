@@ -50,6 +50,7 @@ class TransaksiModels extends Model
 
     public function getByStatus()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " get list of all transaksi order by status");
         return $this
             ->select('kendaraan.nama_kendaraan AS kendaraan,
         driver.nama_driver AS driver,
@@ -65,6 +66,7 @@ class TransaksiModels extends Model
 
     public function getByAgreement1()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " get list of all transaksi order by status where status is 1");
         return $this
             ->select('
             transaksi.transaksi_id AS transaksi_id,
@@ -83,6 +85,7 @@ class TransaksiModels extends Model
 
     public function getByAgreement2()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " get list of all transaksi order by status where status is 2");
         return $this
             ->select('
             transaksi.transaksi_id AS transaksi_id,
@@ -101,6 +104,7 @@ class TransaksiModels extends Model
 
     public function getAllData()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " get list of all transaksi order by tanggal_pemesanan");
         return $this
             ->select(
                 '
@@ -124,6 +128,7 @@ class TransaksiModels extends Model
 
     public function getByKendaraan()
     {
+        log_message('info', "User with ID " . session()->get('user_id') . " get list of all transaksi by kendaraan_id where status is 3");
         return $this
             ->select('transaksi.kendaraan_id AS kendaraan_id,
             COUNT(transaksi.kendaraan_id) AS jumlah')

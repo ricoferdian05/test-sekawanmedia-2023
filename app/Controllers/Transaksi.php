@@ -52,7 +52,7 @@ class Transaksi extends BaseController
         $data = [
             'transaksi' => $transaksi,
         ];
-
+        log_message('info', "User with ID " . session()->get('user_id') . " print all data transaksi");
         return view('admin/transaksi/cetak', $data);
     }
 
@@ -67,12 +67,14 @@ class Transaksi extends BaseController
             $builderTransaksi->set('status', '2');
             $builderTransaksi->where('transaksi_id', $id);
             if ($builderTransaksi->update()) {
+                log_message('info', "User with ID " . session()->get('user_id') . " update status of transaksi with transaksi_id" . $id);
                 session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
             }
         } elseif ($user['role'] === '3') {
             $builderTransaksi->set('status', '3');
             $builderTransaksi->where('transaksi_id', $id);
             if ($builderTransaksi->update()) {
+                log_message('info', "User with ID " . session()->get('user_id') . " update status of transaksi with transaksi_id" . $id);
                 session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
             }
         }
@@ -85,6 +87,7 @@ class Transaksi extends BaseController
 
         $builderTransaksi->where('transaksi_id', $id);
         if ($builderTransaksi->delete()) {
+            log_message('info', "User with ID " . session()->get('user_id') . " delete data of transaksi with transaksi_id" . $id);
             session()->setFlashData('success_tolak', 'Pemesanan ' . $id . ' Ditolak');
         }
         return redirect()->back();

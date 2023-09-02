@@ -26,8 +26,6 @@ class Kendaraan extends BaseController
 
         if ($user['role'] === '1') {
             return view('admin/kendaraan', $data);
-        } elseif ($user['role'] === '2' || $user['role'] === '3') {
-            return view('agreement/kendaraan', $data);
         }
     }
 }

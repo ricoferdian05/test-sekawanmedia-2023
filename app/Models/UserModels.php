@@ -49,6 +49,7 @@ class UserModels extends Model
 
     public function getUserAgreement($id)
     {
+        log_message('info', "User with ID " . $id . " get list of all data users with ID " . $id);
         return $this
             ->select('*,
         role.role AS role_name')

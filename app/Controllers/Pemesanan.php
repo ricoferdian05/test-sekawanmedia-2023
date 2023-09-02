@@ -50,9 +50,11 @@ class Pemesanan extends BaseController
         $builderTransaksi = new \App\Models\TransaksiModels();
 
         if ($builderTransaksi->insert($data) === 0) {
+            log_message('info', "User with ID " . session()->get('user_id') . " insert new data transaksi");
             session()->setFlashdata('success', 'Data Pemesanan Berhasil Dikirim!!!');
             return redirect()->back();
         } else {
+            log_message('error', "User with ID " . session()->get('user_id') . " failed to insert new data transaksi");
             session()->setFlashdata('error', 'Data Pemesanan Gagal Dikirim!!!');
             return redirect()->back();
         }
