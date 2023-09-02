@@ -10,14 +10,18 @@ class Admin extends BaseController
     {
         $builderTransaksi = new \App\Models\TransaksiModels();
         $builderUser = new \App\Models\UserModels();
+        $builderKendaraan = new \App\Models\KendaraanModels();
 
         $user = $builderUser->find(session()->get('user_id'));
-        $transaksi = $builderTransaksi->findAll();
+        $transaksi = $builderTransaksi->getByKendaraan();
+        $kendaraan = $builderKendaraan->findAll();
+        // dd($transaksi);
 
         $data = [
             'title' => 'Dashboard Admin',
             'user' => $user,
             'transaksi' => $transaksi,
+            'kendaraan' => $kendaraan,
         ];
 
         return view('admin/dashboard', $data);

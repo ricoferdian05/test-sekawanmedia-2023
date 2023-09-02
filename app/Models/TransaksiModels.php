@@ -84,4 +84,14 @@ class TransaksiModels extends Model
             ->orderBy('tanggal_pemesanan', 'ASC')
             ->findAll();
     }
+
+    public function getByKendaraan()
+    {
+        return $this
+            ->select('transaksi.kendaraan_id AS kendaraan_id,
+            COUNT(transaksi.kendaraan_id) AS jumlah')
+            ->groupBy('kendaraan_id')
+            ->where('status', '3')
+            ->findAll();
+    }
 }
