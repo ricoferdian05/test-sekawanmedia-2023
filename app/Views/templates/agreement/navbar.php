@@ -17,7 +17,7 @@
                 </li>
             </ul>
             <div class="col d-flex justify-content-end">
-                <b><?= $user['nama_user'] ?> | <?= $user['role_name'] ?></b>
+                <b><?= $dataUser['nama_user'] ?> | <?= $dataUser['role_name'] ?></b>
             </div>
         </div>
     </div>

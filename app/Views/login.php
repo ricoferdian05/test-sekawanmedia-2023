@@ -20,7 +20,7 @@
                 ?>
                 <form action="<?= base_url('login/auth') ?>" method="post">
                     <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Email / Username</label>
+                        <label for="inputEmail" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email@example.com" required>
                     </div>
                     <div class="mb-3">

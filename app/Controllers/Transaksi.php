@@ -12,8 +12,18 @@ class Transaksi extends BaseController
         $builderTransaksi = new \App\Models\TransaksiModels();
 
         $user = $builderUser->find(session('user_id'));
+        $dataUser = null;
 
-        $transaksi = $builderTransaksi->getByStatus()->paginate(10, 'transaksi');
+        if ($user['role'] === '2') {
+            $dataUser = $builderUser->getUserAgreement(session('user_id'));
+            $transaksi = $builderTransaksi->getByAgreement1()->paginate(10, 'transaksi');
+        } elseif ($user['role'] === '3') {
+            $dataUser = $builderUser->getUserAgreement(session('user_id'));
+            $transaksi = $builderTransaksi->getByAgreement2()->paginate(10, 'transaksi');
+        } else {
+            $transaksi = $builderTransaksi->getByStatus()->paginate(10, 'transaksi');
+        }
+
         $pager = $builderTransaksi->pager;
         $urutan = $this->request->getVar('page_transaksi') ? $this->request->getVar('page_transaksi') : 1;
 
@@ -23,6 +33,7 @@ class Transaksi extends BaseController
             'transaksi' => $transaksi,
             'pager' => $pager,
             'urutan' => $urutan,
+            'dataUser' => $dataUser,
         ];
 
         if ($user['role'] === '1') {
@@ -43,5 +54,28 @@ class Transaksi extends BaseController
         ];
 
         return view('admin/transaksi/cetak', $data);
+    }
+
+    public function setuju($id)
+    {
+        $builderTransaksi = new \App\Models\TransaksiModels();
+
+        $builderTransaksi->set('status', '2');
+        $builderTransaksi->where('transaksi_id', $id);
+        if ($builderTransaksi->update()) {
+            session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
+        }
+        return redirect()->back();
+    }
+
+    public function tolak($id)
+    {
+        $builderTransaksi = new \App\Models\TransaksiModels();
+
+        $builderTransaksi->where('transaksi_id', $id);
+        if ($builderTransaksi->delete()) {
+            session()->setFlashData('success_tolak', 'Pemesanan ' . $id . ' Ditolak');
+        }
+        return redirect()->back();
     }
 }
