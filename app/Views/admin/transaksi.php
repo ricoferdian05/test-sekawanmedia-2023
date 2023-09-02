@@ -9,11 +9,14 @@
         <div class="col">
             <h2>Riwayat Pemesanan</h2>
         </div>
+        <div class="col d-flex justify-content-end">
+            <a href="<?= base_url('transaksi/cetak') ?>" class="btn btn-primary" target="_blank"><i class="bi bi-printer"></i> Cetak</a>
+        </div>
     </div>
     <div class="row">
         <div class="col">
             <table class="table table-striped table-hover">
-                <thead class="table-primary">
+                <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Kendaraan</th>
@@ -39,13 +42,13 @@
                             <td class="align-middle"><?= date_format(date_create($transaksi[$i]['tanggal_kembali']), 'd-m-Y') ?></td>
                             <td class="align-middle">
                                 <?php
-                                if ($transaksi[$i]['status'] === '0') { ?>
+                                if ($transaksi[$i]['status'] === '1') { ?>
                                     <div class="btn btn-outline-danger">Belum Disetujui</div>
                                 <?php
-                                } elseif ($transaksi[$i]['status'] === '1') { ?>
+                                } elseif ($transaksi[$i]['status'] === '2') { ?>
                                     <div class="btn btn-outline-warning">Disetujui Level 1</div>
                                 <?php
-                                } elseif ($transaksi[$i]['status'] === '2') { ?>
+                                } elseif ($transaksi[$i]['status'] === '3') { ?>
                                     <div class="btn btn-outline-success">Selesai</div>
                                 <?php
                                 }

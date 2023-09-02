@@ -44,7 +44,7 @@ class Pemesanan extends BaseController
             'hp_pemesan' => $hp_pemesan,
             'tanggal_pemesanan' => $tanggal_pemesanan,
             'tanggal_kembali' => $tanggal_kembali,
-            'status' => 0,
+            'status' => 1,
         ];
 
         $builderTransaksi = new \App\Models\TransaksiModels();

@@ -61,4 +61,27 @@ class TransaksiModels extends Model
             ->join('driver', 'driver.driver_id = transaksi.driver_id')
             ->orderBy('status', 'ASC');
     }
+
+    public function getAllData()
+    {
+        return $this
+            ->select(
+                '
+        transaksi_id,
+        transaksi.kendaraan_id AS kendaraan_id,
+        kendaraan.nama_kendaraan AS kendaraan,
+        transaksi.driver_id AS driver_id,
+        driver.nama_driver AS driver,
+        nama_pemesan,
+        hp_pemesan,
+        tanggal_pemesanan,
+        tanggal_kembali,
+        status_pemesanan.status AS status'
+            )
+            ->join('kendaraan', 'kendaraan.kendaraan_id = transaksi.kendaraan_id')
+            ->join('driver', 'driver.driver_id = transaksi.driver_id')
+            ->join('status_pemesanan', 'status_pemesanan.status_id = transaksi.status')
+            ->orderBy('tanggal_pemesanan', 'ASC')
+            ->findAll();
+    }
 }

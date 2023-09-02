@@ -31,4 +31,17 @@ class Transaksi extends BaseController
             return view('agreement/transaksi', $data);
         }
     }
+
+    public function cetak()
+    {
+        $builderTransaksi = new \App\Models\TransaksiModels();
+
+        $transaksi = $builderTransaksi->getAllData();
+
+        $data = [
+            'transaksi' => $transaksi,
+        ];
+
+        return view('admin/transaksi/cetak', $data);
+    }
 }

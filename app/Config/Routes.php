@@ -15,6 +15,7 @@ $routes->group('/', ['filter' => 'auth'], function ($routes) {
     $routes->post('pemesanan/tambah', 'pemesanan::tambah');
 
     $routes->get('transaksi', 'transaksi::index');
+    $routes->get('transaksi/cetak', 'transaksi::cetak');
 
     $routes->get('agreement', 'Agreement::index');
 });
