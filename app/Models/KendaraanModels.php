@@ -20,6 +20,7 @@ class KendaraanModels extends Model
         'nama_kendaraan',
         'bbm',
         'jadwal_service',
+        'pemilik',
         'gambar_kendaraan',
     ];
 

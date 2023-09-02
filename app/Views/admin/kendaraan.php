@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<?= $this->include('templates/navbar') ?>
+<?= $this->include('templates/admin/navbar') ?>
 
 <div class="container-fluid p-3">
     <div class="row mb-3">
@@ -21,6 +21,7 @@
                         <th scope="col">Nama Kendaraan</th>
                         <th scope="col">Konsumsi BBM (km/l)</th>
                         <th scope="col">Jadwal Service</th>
+                        <th scope="col">Pemilik</th>
                         <th scope="col">Gambar Kendaraan</th>
                     </tr>
                 </thead>
@@ -35,6 +36,7 @@
                             <td class="align-middle"><?= $kendaraan[$i]['nama_kendaraan'] ?></td>
                             <td class="align-middle"><?= $kendaraan[$i]['bbm'] ?> km/liter</td>
                             <td class="align-middle"><?= date_format(date_create($kendaraan[$i]['jadwal_service']), 'd-m-Y') ?></td>
+                            <td class="align-middle"><?= $kendaraan[$i]['pemilik'] ?></td>
                             <td class="align-middle"><img class="rounded-3" src="<?= base_url($kendaraan[$i]['gambar_kendaraan']) ?>" alt="gambar_kendaraan" width="150"></td>
                         </tr>
                     <?php

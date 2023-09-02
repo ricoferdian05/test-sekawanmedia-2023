@@ -17,6 +17,7 @@ class Kendaraan extends Seeder
                 'bbm' => 20,
                 'jadwal_service' => date_format(date_create('2024-08-23'), 'Y/m/d H:i:s'),
                 'gambar_kendaraan'    => 'kendaraan/L-300.jpg',
+                'pemilik' => 'Milik Perusahaan',
             ],
             [
                 'kendaraan_id' => uniqid('kendaraan-', true),
@@ -26,6 +27,7 @@ class Kendaraan extends Seeder
                 'bbm' => 15,
                 'jadwal_service' => date_format(date_create('2024-06-12'), 'Y/m/d H:i:s'),
                 'gambar_kendaraan'    => 'kendaraan/Grand-Max.jpeg',
+                'pemilik' => 'Milik Perusahaan',
             ],
             [
                 'kendaraan_id' => uniqid('kendaraan-', true),
@@ -35,6 +37,7 @@ class Kendaraan extends Seeder
                 'bbm' => 45,
                 'jadwal_service' => date_format(date_create('2024-05-11'), 'Y/m/d H:i:s'),
                 'gambar_kendaraan'    => 'kendaraan/Fuso.jpeg',
+                'pemilik' => 'Milik Perusahaan',
             ],
             [
                 'kendaraan_id' => uniqid('kendaraan-', true),
@@ -44,6 +47,7 @@ class Kendaraan extends Seeder
                 'bbm' => 50,
                 'jadwal_service' => date_format(date_create('2024-04-22'), 'Y/m/d H:i:s'),
                 'gambar_kendaraan'    => 'kendaraan/Hino-Dutro.png',
+                'pemilik' => 'Sewa',
             ],
             [
                 'kendaraan_id' => uniqid('kendaraan-', true),
@@ -53,6 +57,7 @@ class Kendaraan extends Seeder
                 'bbm' => 65,
                 'jadwal_service' => date_format(date_create('2024-09-02'), 'Y/m/d H:i:s'),
                 'gambar_kendaraan'    => 'kendaraan/Scania-770.png',
+                'pemilik' => 'Sewa',
             ],
         ];
 

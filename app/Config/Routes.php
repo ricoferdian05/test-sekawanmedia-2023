@@ -10,7 +10,9 @@ $routes->group('/', ['filter' => 'auth'], function ($routes) {
     $routes->get('admin', 'admin::index');
     $routes->get('vehicle', 'kendaraan::index');
     $routes->get('driver', 'driver::index');
+
     $routes->get('pemesanan', 'pemesanan::index');
+    $routes->post('pemesanan/tambah', 'pemesanan::tambah');
 
     $routes->get('agreement', 'Agreement::index');
 });

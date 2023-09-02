@@ -21,25 +21,25 @@ class Transaksi extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
             ],
-            'jarak_tempuh' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-            ],
-            'nama_penyewa' => [
+            'nama_pemesan' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
             ],
-            'hp_penyewa' => [
+            'hp_pemesan' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
             ],
-            'tanggal_sewa' => [
+            'tanggal_pemesanan' => [
                 'type'           => 'DATETIME',
                 'null'           => true,
             ],
             'tanggal_kembali' => [
                 'type'           => 'DATETIME',
                 'null'           => true,
+            ],
+            'status' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
             ],
         ]);
         $this->forge->addKey('transaksi_id', true);

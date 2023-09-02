@@ -17,10 +17,9 @@ class TransaksiModels extends Model
         'transaksi_id',
         'kendaraan_id',
         'driver_id',
-        'jarak_tempuh',
-        'nama_penyewa',
-        'hp_penyewa',
-        'tanggal_sewa',
+        'nama_pemesan',
+        'hp_pemesan',
+        'tanggal_pemesanan',
         'tanggal_kembali',
     ];
 

@@ -37,6 +37,10 @@ class Kendaraan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'pemilik' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
         ]);
         $this->forge->addKey('kendaraan_id', true);
         $this->forge->createTable('kendaraan');
