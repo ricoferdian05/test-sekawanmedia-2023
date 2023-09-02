@@ -10,15 +10,12 @@ class Role extends Seeder
     {
         $data = [
             [
-                'role_id' => uniqid('role-admin-', true),
                 'role'    => 'Admin',
             ],
             [
-                'role_id' => uniqid('role-agreement1-', true),
                 'role'    => 'Agreement Level 1',
             ],
             [
-                'role_id' => uniqid('role-agreement2-', true),
                 'role'    => 'Agreement Level 2',
             ],
         ];
