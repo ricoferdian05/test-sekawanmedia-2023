@@ -59,11 +59,22 @@ class Transaksi extends BaseController
     public function setuju($id)
     {
         $builderTransaksi = new \App\Models\TransaksiModels();
+        $builderUser = new \App\Models\UserModels();
 
-        $builderTransaksi->set('status', '2');
-        $builderTransaksi->where('transaksi_id', $id);
-        if ($builderTransaksi->update()) {
-            session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
+        $user = $builderUser->find(session()->get('user_id'));
+
+        if ($user['role'] === '2') {
+            $builderTransaksi->set('status', '2');
+            $builderTransaksi->where('transaksi_id', $id);
+            if ($builderTransaksi->update()) {
+                session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
+            }
+        } elseif ($user['role'] === '3') {
+            $builderTransaksi->set('status', '3');
+            $builderTransaksi->where('transaksi_id', $id);
+            if ($builderTransaksi->update()) {
+                session()->setFlashData('success_setuju', 'Pemesanan ' . $id . ' Disetujui');
+            }
         }
         return redirect()->back();
     }
