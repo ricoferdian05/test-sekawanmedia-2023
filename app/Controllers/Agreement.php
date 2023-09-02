@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class Admin extends BaseController
+class Agreement extends BaseController
 {
     public function index()
     {
@@ -12,17 +12,17 @@ class Admin extends BaseController
         $builderUser = new \App\Models\UserModels();
         $builderKendaraan = new \App\Models\KendaraanModels();
 
-        $user = $builderUser->find(session()->get('user_id'));
+        $user = $builderUser->getUserAgreement(session()->get('user_id'));
         $transaksi = $builderTransaksi->getByKendaraan();
         $kendaraan = $builderKendaraan->findAll();
 
         $data = [
-            'title' => 'Dashboard Admin',
+            'title' => 'Dashboard Agreement',
             'user' => $user,
             'transaksi' => $transaksi,
             'kendaraan' => $kendaraan,
         ];
 
-        return view('admin/dashboard', $data);
+        return view('agreement/dashboard', $data);
     }
 }

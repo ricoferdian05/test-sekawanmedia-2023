@@ -46,4 +46,14 @@ class UserModels extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getUserAgreement($id)
+    {
+        return $this
+            ->select('*,
+        role.role AS role_name')
+            ->join('role', 'role.role_id = user.role')
+            ->where('user_id', $id)
+            ->first();
+    }
 }

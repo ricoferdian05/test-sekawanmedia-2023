@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<?= $this->include('templates/admin/navbar') ?>
+<?= $this->include('templates/agreement/navbar') ?>
 
 <div class="container-fluid">
     <div class="row rounded-3 shadow m-3 p-3 bg-body-secondary">
