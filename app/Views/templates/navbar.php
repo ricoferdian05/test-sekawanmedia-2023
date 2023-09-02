@@ -10,6 +10,9 @@
                     <a class="nav-link" href="<?= base_url('admin') ?>">Dashboard</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('pemesanan') ?>">Form Pemesanan Kendaraan</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('vehicle') ?>">Kendaraan</a>
                 </li>
                 <li class="nav-item">

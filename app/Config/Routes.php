@@ -9,6 +9,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->group('/', ['filter' => 'auth'], function ($routes) {
     $routes->get('admin', 'admin::index');
     $routes->get('vehicle', 'kendaraan::index');
+    $routes->get('driver', 'driver::index');
+    $routes->get('pemesanan', 'pemesanan::index');
 
     $routes->get('agreement', 'Agreement::index');
 });
