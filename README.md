@@ -3,7 +3,7 @@
 ## Daftar Akun
 
 Admin
-email : admin@gmail.com
+email : admin@gmail.com \n
 password : admin
 
 Agreement 1
