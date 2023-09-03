@@ -55,4 +55,11 @@ Agreement 2 =
 2. Dapat menyetujui pemesanan yang dikirimkan oleh admin, namun harus menunggu persetujuan dari `Agreement 1` yang nantinya status pemesanan akan di update menjadi `Selesai`
 3. Jika belum disetujui oleh `Agreement 1`, data pemesanan tidak akan muncul pada halaman transaksi.
 
+## Database
+![Database drawio](https://github.com/ricoferdian05/test-sekawanmedia-2023/assets/71257965/293ea8e5-fdf3-4e1e-99d3-b0fc7d219a3b)
+
+## Activity Diagram
+![Activity Diagram drawio](https://github.com/ricoferdian05/test-sekawanmedia-2023/assets/71257965/38d8cc89-b9ea-477f-b8dc-f07a8a0c64b0)
+
+
 # Cukup Sekian untuk Aplikasi Pemesanan Kendaraan
