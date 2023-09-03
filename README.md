@@ -3,16 +3,16 @@
 ## Daftar Akun
 
 Admin
-email : admin@gmail.com \n
-password : admin
+- email : admin@gmail.com
+- password : admin
 
 Agreement 1
-email : agreement1@gmail.com
-password : agreement1
+- email : agreement1@gmail.com
+- password : agreement1
 
 Agreement 2
-email: agreement2@gmail.com
-password : agreement2
+- email: agreement2@gmail.com
+- password : agreement2
 
 ## Database Version
 MySQL Database : 10.4.27-MariaDB
