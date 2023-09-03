@@ -1,62 +1,58 @@
-# CodeIgniter 4 Application Starter
+# Test Sekawan Media
 
-## What is CodeIgniter?
+## Daftar Akun
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Admin
+email : admin@gmail.com
+password : admin
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Agreement 1
+email : agreement1@gmail.com
+password : agreement1
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Agreement 2
+email: agreement2@gmail.com
+password : agreement2
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Database Version
+MySQL Database : 10.4.27-MariaDB
 
-## Installation & updates
+## PHP Version
+PHP 8.1.12
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Framework
+Codeigniter 4
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## Panduan Penggunaan Aplikasi
+- Tambahkan database baru di MySQL Database dengan nama `test-sekawanmedia-2023`
+- Clone Github ini dengan command `git clone https://github.com/ricoferdian05/test-sekawanmedia-2023.git`
+- Buka terminal / cmd pada folder yang baru saja di clone
+- Mengupdate Composer `compser update`
+- Set up ENV -> copy `env` dan ubah nama file copy menjadi `.env`. Lalu setup file `.env` seperti gambar berikut ![image](https://github.com/ricoferdian05/test-sekawanmedia-2023/assets/71257965/318b8a1d-83b7-4aec-84b1-a110bf6739d1)\
+- Migration dan Seeding Database -> Migrasi terlebih dahulu database yang sudah saya buat dengan mengetikkan `php spark migrate` pada terminal. Lalu Seeding satu persatu dengan command `php spark db:seed NamaFile`. File Seeding bisa di cek di folder `app/Database/Seeds`, contoh `php spark db:seed Driver`.
+- Set up Aplikasi sudah selesai
 
-## Setup
+## Run Aplikasi
+- Buka terminal pada folder project.
+- Ketikkan `php spark serve` pada terminal.
+- ![image](https://github.com/ricoferdian05/test-sekawanmedia-2023/assets/71257965/d9887b0f-940c-4806-9c22-b941982d9faf) akan muncul tampilan seperti gambar diatas lalu buka di browser server tersebut. `http://localhost:8080` pada browser, lalu anda akan di alihkan ke halaman login
+- Masukkan email dan password yang sudah saya sediaka diatas.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## Fungsi Aktor
+Admin =
+1. Mempunyai dashboard yang berisi grafik riwayat pemakaian kendaraan.
+2. Dapat menambahkan form pemesanan kendaraan yang nantinya akan disetujui / ditolak oleh aktor `agreement1` dan `agreement2`.
+3. Dapat melihat data kendaraan yang ada
+4. Dapat melihat data driver yang ada
+5. Dapat melihat semua riwayat transaksi / pemesanan yang ada. Dan mencetak nya dengan menekan button `cetak` di pojok kanan atas.
 
-## Important Change with index.php
+Agreement 1 =
+1. Mempunyai dashboard yang berisi grafik riwayat pemakaian kendaraan dan tabel riwayat semua pemesanan.
+2. Dapat menyetujui pemesanan yang dikirimkan oleh admin yang nantinya status pemesanan akan di update menjadi `Disetujui level 1`
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Agreement 2 =
+1. Mempunyai dashboard yang berisi grafik riwayat pemakaian kendaraan dan tabel riwayat semua pemesanan.
+2. Dapat menyetujui pemesanan yang dikirimkan oleh admin, namun harus menunggu persetujuan dari `Agreement 1` yang nantinya status pemesanan akan di update menjadi `Selesai`
+3. Jika belum disetujui oleh `Agreement 1`, data pemesanan tidak akan muncul pada halaman transaksi.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+# Cukup Sekian untuk Aplikasi Pemesanan Kendaraaan
