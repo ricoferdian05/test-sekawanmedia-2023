@@ -55,4 +55,4 @@ Agreement 2 =
 2. Dapat menyetujui pemesanan yang dikirimkan oleh admin, namun harus menunggu persetujuan dari `Agreement 1` yang nantinya status pemesanan akan di update menjadi `Selesai`
 3. Jika belum disetujui oleh `Agreement 1`, data pemesanan tidak akan muncul pada halaman transaksi.
 
-# Cukup Sekian untuk Aplikasi Pemesanan Kendaraaan
+# Cukup Sekian untuk Aplikasi Pemesanan Kendaraan
